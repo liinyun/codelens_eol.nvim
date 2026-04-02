@@ -27,7 +27,7 @@ local Capability = require('vim.lsp._capability')
 ---
 ---@field timer? uv.uv_timer_t
 local Provider = {
-  name = 'codelens',
+  name = 'eol_codelens',
   method = 'textDocument/codeLens',
   active = {},
 }
@@ -294,7 +294,7 @@ api.nvim_set_decoration_provider(namespace, {
 ---@param filter? vim.lsp.capability.enable.Filter
 ---@return boolean whether code lens is enabled.
 function M.is_enabled(filter)
-  return vim.lsp._capability.is_enabled('codelens', filter)
+  return vim.lsp._capability.is_enabled('eol_codelens', filter)
 end
 
 --- Enables or disables code lens for the {filter}ed scope.
@@ -310,7 +310,7 @@ end
 ---@param enable? boolean true/nil to enable, false to disable
 ---@param filter? vim.lsp.capability.enable.Filter
 function M.enable(enable, filter)
-  vim.lsp._capability.enable('codelens', enable, filter)
+  vim.lsp._capability.enable('eol_codelens', enable, filter)
 end
 
 --- Optional filters |kwargs|:

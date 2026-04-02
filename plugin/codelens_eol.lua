@@ -10,7 +10,7 @@ local function safe_attach(bufnr)
     if client.server_capabilities.codeLensProvider then
       print('DEBUG: Attaching Linya-EOL to ' .. client.name)
       -- 1. Mute Neovim's default renderer
-      -- vim.lsp.codelens.enable(false, { bufnr = bufnr })
+      vim.lsp.codelens.enable(false, { bufnr = bufnr })
       -- 2. Enable your custom renderer
       my_codelens.enable(true, { bufnr = bufnr })
       -- 3. Force a data fetch
