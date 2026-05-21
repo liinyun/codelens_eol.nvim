@@ -259,12 +259,6 @@ function Provider:on_win(toprow, botrow)
             virt_text_pos = 'eol', -- Put it at the end of the line
             hl_mode = 'combine',
           })
-
-          -- Fix https://github.com/neovim/neovim/issues/16166
-          -- Make sure the code lens on the first line is visible when updating.
-          if row == 0 then
-            vim.fn.winrestview({ topfill = 1 })
-          end
         end
         self.row_version[row] = self.version
       end
